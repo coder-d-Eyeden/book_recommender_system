@@ -1,0 +1,91 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %} - Book Recommender System</title>
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+
+</head>
+
+    <!-- Nav Bar -->
+
+    <nav class="navbar navbar-expand-lg" style="background-color: aquamarine;">
+        <a href="/" class="navbar-brand fw-bold fs-3" href="#">
+            My Book Recommender
+        </a>
+
+        <div class="ms-auto">
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recommend">Recommend</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="search-container">
+        <!-- Search Bar -->
+        <form action="/recommend" method="POST">
+            <input type="text" name='user_input' class="search-input" placeholder="search for a book...">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+
+    </div>
+
+    {% block body %}
+
+    {% endblock body %}
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Book Recommender</h4>
+                <p>
+                    Discover books tailored to your interests using machine learning and recommendation systems.
+                </p>
+            </div>
+
+            <div id="contact" class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: royrubel50@gmail.com</p>
+                <p>Github: github.com/coder-d-eyeden</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a><br>
+                <a href="/recommend">Recommend</a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="footer-bottom">
+            © 2026 Book Recommender System | Built with Flask & Python
+        </p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+/* Search Bar */
+.search-container{
+  width: 70%;
+  margin: 20px auto;
+}
+.search-container form{
+  display: flex;
+}
+.search-input {
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+}
+.search-input:focus {
+    border-color: #666;
+}
+
+.search-btn {
+    padding: 15px 25px;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #00a383;
+}
+
+
+.text-white {
+  color: rgb(255, 255, 255);
+}
+
+.card {
+    width: 220px;
+    height: 420px;
+    margin: auto;
+    overflow: hidden;
+    color: #ffffff;
+    background-color: #141414;
+}
+
+.card-img-top {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Recommendation page */
+
+.book-grid{
+  width: 1200px;
+  max-width: 95%;
+  margin: auto;
+
+  display:grid;
+  grid-template-columns: repeat(5,220px);
+  gap: 25px;
+
+  justify-content: center;
+}
+.card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 40px;
+}
+
+/* footere */
+.footer{
+  background-color: #111;
+  color: white;
+  margin-top: auto;
+  padding: 30px 0 10px;
+
+}
+.footer-container{
+  width: 90%;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section{
+  width: 300px;
+  margin-bottom: 20px;
+}
+.footer-section h4{
+  color: aquamarine;
+  margin-bottom: 15px;
+}
+
+.footer-section a{
+  color: white;
+  text-decoration: none;
+}
+.footer-section a:hover{
+  color: aquamarine;
+}
+.footer-bottom{
+  text-align: center;
+  margin-top: 10px;
+  color: #aaa;
+}
