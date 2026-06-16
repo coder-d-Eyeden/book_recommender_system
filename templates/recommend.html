@@ -1,39 +1,53 @@
 <!-- recommend.html -->
 {% extends 'base.html' %}
 
+
+
+
 {% block body %}
-<div class="row mt-4">
-            <div class="col-md-12">
-                <h1 class="text-white display-4 fw-bold">
-                    Recommended Books
-                </h1>
-            </div>
-        </div>
-<div class="row">
-    
-{% if error %}
-    <div class="alert alert-danger mt-3">{{ error }}</div>
+
+{% if search_query %}
+<h4 class="text-white display-6">
+    Search Result: <span style="color: aquamarine;">{{ search_query }}</span>
+</h4>
 {% endif %}
 
-{% if data %}
 
-<div class="book-grid">
-
-    {% for i in data %}
-
-    <div class="card p-3">
-        <img class="card-img-top" src="{{ i[2] }}" alt="Book Image">
-
-        <div class="card-body">
-            <h5 class="card-title">{{ i[0] }}</h5>
-            <p class="card-text">{{ i[1] }}</p>
-        </div>
+<div class="row mt-4">
+    <div class="col-md-12">
+        <h1 class="text-white display-4 fw-bold">
+            Recommended Books
+        </h1>
     </div>
-
-    {% endfor %}
-
 </div>
 
-{% endif %}
+
+<div class="row">
+
+    {% if error %}
+    <div class="alert alert-danger mt-3">{{ error }}</div>
+    {% endif %}
+
+    {% if data %}
+
+    <div class="book-grid">
+
+        {% for i in data %}
+
+        <div class="card p-3">
+            <img class="card-img-top" src="{{ i[2] }}" alt="Book Image">
+
+            <div class="card-body">
+                <h5 class="card-title">{{ i[0] }}</h5>
+                <p class="card-text">{{ i[1] }}</p>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% endif %}
+</div>
 
 {% endblock body%}

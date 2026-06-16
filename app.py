@@ -24,7 +24,19 @@ def index ():
 
 @app.route("/recommend",methods=['GET','POST'])
 def recommend_ui():
+        
+
+        if request.method == 'GET':
+            return render_template('recommend.html')
+        
         user_input = request.form.get('user_input')
+        
+        if not user_input:
+             return render_template(
+                  'recommend.html',
+                  error = 'Please Enter A Book Name'
+             )
+
         if user_input not in pt.index:
              return render_template('recommend.html',data=[],error=f"'{user_input}'is not available in out database")
         index = np.where(pt.index==user_input)[0][0]
@@ -43,6 +55,6 @@ def recommend_ui():
         print(data)
 
         
-        return render_template('recommend.html',data=data)
+        return render_template('recommend.html',data=data,search_query = user_input)
 if __name__ =="__main__":
     app.run(debug=True)
