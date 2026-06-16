@@ -52,9 +52,6 @@ def recommend_ui():
 
             data.append(item)
         
-        print(data)
-
-        
         return render_template('recommend.html',data=data,search_query = user_input)
 if __name__ =="__main__":
     app.run(debug=True)
