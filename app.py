@@ -1,11 +1,16 @@
 from flask import Flask,render_template,request
 import pickle
 import numpy as np
+import os
 
-popular_df = pickle.load(open(r'model\popular.pkl','rb'))
-pt= pickle.load(open(r'model\pt.pkl','rb'))
-books= pickle.load(open(r'model\books.pkl','rb'))
-similarity_scores= pickle.load(open(r'model\similarity_scores.pkl','rb'))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+popular_df = pickle.load(
+    open(os.path.join(BASE_DIR, "model", "popular.pkl"), "rb")
+)
+pt= pickle.load(open(os.path.join(BASE_DIR,"model","pt.pkl"),"rb" ))
+books= pickle.load(open(os.path.join(BASE_DIR,"model","books.pkl"),"rb" ))
+similarity_scores= pickle.load(open(os.path.join(BASE_DIR,"model","similarity_scores.pkl"),'rb'))
 
 
 app = Flask(__name__)
