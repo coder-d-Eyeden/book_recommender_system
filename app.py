@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 import pickle
 import numpy as np
 
-popular_df = pickle.load(open(r'G:\Project\Book_reccomender\dataset\model\popular.pkl','rb'))
+popular_df = pickle.load(open(r'model\popular.pkl','rb'))
 pt= pickle.load(open(r'model\pt.pkl','rb'))
 books= pickle.load(open(r'model\books.pkl','rb'))
 similarity_scores= pickle.load(open(r'model\similarity_scores.pkl','rb'))
